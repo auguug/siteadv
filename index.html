@@ -454,9 +454,10 @@
         /* HERO */
         #hero {
             min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
-            padding: 7rem 5% 3rem;
+            padding: 7.5rem 5% 3rem;
             position: relative;
             background: linear-gradient(135deg, rgba(15, 10, 6, 0.72) 0%, rgba(42, 26, 14, 0.68) 100%), url('biblioteca.jpg') center/cover no-repeat;
             background-attachment: scroll;
@@ -909,7 +910,7 @@
             }
 
             #hero {
-                padding: 8rem 5% 4rem;
+                padding: 9.5rem 5% 4rem;
             }
 
             .hero-title {
@@ -1011,8 +1012,9 @@
             }
 
             #hero {
-                padding: 0 8%;
+                padding: 12.75rem 8% 4rem;
                 background-attachment: fixed;
+                align-items: flex-start;
             }
 
             .cta-strip {
@@ -1090,6 +1092,30 @@
 
             .section-title {
                 font-size: 2.5rem;
+            }
+        }
+
+        /* Telas de pouca altura (ex.: monitores 16:9 em Full HD/HD, notebooks) —
+           garante que o bloco do hero encolha e caiba sem ficar atrás do cabeçalho */
+        @media (min-width: 768px) and (max-height: 820px) {
+            #hero {
+                min-height: auto;
+                padding-top: 10.5rem;
+                padding-bottom: 3rem;
+            }
+
+            .hero-title {
+                font-size: 2.6rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-eyebrow {
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
         }
     </style>
@@ -1408,7 +1434,7 @@
             // Atraso de 5s antes da primeira expansão
             tooltipTimeout = setTimeout(() => {
                 cycle();
-                tooltipInterval = setInterval(cycle, 20000); // 5s visível + 15s oculto = ciclo de 20s
+                tooltipInterval = setInterval(cycle, 23500); // 5s visível + 18.5s oculto = ciclo de 23.5s
             }, 5000);
         }
 
